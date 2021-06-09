@@ -36,14 +36,14 @@ from userbot.events import register
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`Gambar Terlalu Kecil`"
 PP_ERROR = "`Gagal Memproses Gambar`"
-NO_ADMIN = "`Lord Bukan Admin:)`"
-NO_PERM = "`Lord Tidak Mempunyai Izin!`"
+NO_ADMIN = "`Lu Bukan Admin cok:)`"
+NO_PERM = "`Anda Tidak Mempunyai Izin!`"
 NO_SQL = "`Berjalan Pada Mode Non-SQL`"
 
 CHAT_PP_CHANGED = "`Berhasil Mengubah Profil Grup`"
 CHAT_PP_ERROR = (
     "`Ada Masalah Dengan Memperbarui Foto,`"
-    "`Mungkin Karna Lord Bukan Admin,`"
+    "`Mungkin Karna Anda Bukan Admin,`"
     "`Atau Tidak Mempunyai Izin.`"
 )
 INVALID_MEDIA = "`Media Tidak Valid`"
@@ -248,11 +248,11 @@ async def ban(bon):
     # Shout out the ID, so that fedadmins can fban later
     if reason:
         await bon.edit(
-            f"`PENGGUNA:` [{user.first_name}](tg://user?id={user.id})\n`ID:` `{str(user.id)}` Telah Di Banned !!\n`Alasan:` {reason}"
+            f"`JAMED:` [{user.first_name}](tg://user?id={user.id})\n`ID:` `{str(user.id)}` Telah Di Banned !!\n`Alasan:` {reason}"
         )
     else:
         await bon.edit(
-            f"`PENGGUNA:` [{user.first_name}](tg://user?id={user.id})\n`ID:` `{str(user.id)}` Telah Di Banned !"
+            f"`JAMED:` [{user.first_name}](tg://user?id={user.id})\n`ID:` `{str(user.id)}` Telah Di Banned !"
         )
     # Announce to the logging group if we have banned the person
     # successfully!
@@ -260,7 +260,7 @@ async def ban(bon):
         await bon.client.send_message(
             BOTLOG_CHATID,
             "#BAN\n"
-            f"PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
+            f"JAMED: [{user.first_name}](tg://user?id={user.id})\n"
             f"GRUP: {bon.chat.title}(`{bon.chat_id}`)",
         )
 
@@ -326,13 +326,13 @@ async def spider(spdr):
 
     if user.id == self_user.id:
         return await spdr.edit(
-            "`Tangan Terlalu Pendek, Tidak Bisa Membisukan Diri Sendiri...\n(ヘ･_･)ヘ┳━┳`"
+            "`YA NGOTAK DONG , MANA BISA MUTE DIRI SENDIRI...\n`"
         )
 
     # If everything goes well, do announcing and mute
     await spdr.edit("`Telah Dibisukan!`")
     if mute(spdr.chat_id, user.id) is False:
-        return await spdr.edit("`Error! Pengguna Sudah Dibisukan.`")
+        return await spdr.edit("`Error! Kuproy Sudah Dibisukan.`")
     else:
         try:
             await spdr.client(EditBannedRequest(spdr.chat_id, user.id, MUTE_RIGHTS))
@@ -348,7 +348,7 @@ async def spider(spdr):
                 await spdr.client.send_message(
                     BOTLOG_CHATID,
                     "#MUTE\n"
-                    f"PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
+                    f"JAMET: [{user.first_name}](tg://user?id={user.id})\n"
                     f"GRUP: {spdr.chat.title}(`{spdr.chat_id}`)",
                 )
         except UserIdInvalidError:
@@ -380,12 +380,12 @@ async def unmoot(unmot):
         return
 
     if unmute(unmot.chat_id, user.id) is False:
-        return await unmot.edit("`Kesalahan! Pengguna Sudah Tidak Dibisukan.`")
+        return await unmot.edit("`Kesalahan! JAMET Sudah Tidak Gagu.`")
     else:
 
         try:
             await unmot.client(EditBannedRequest(unmot.chat_id, user.id, UNBAN_RIGHTS))
-            await unmot.edit("```Berhasil Melakukan Unmute! Pengguna Sudah Tidak Lagi Dibisukan```")
+            await unmot.edit("```Berhasil Melakukan Unmute! JAMET Sudah Tidak Bisu```")
             await sleep(3)
             await unmot.delete()
         except UserIdInvalidError:
@@ -395,7 +395,7 @@ async def unmoot(unmot):
             await unmot.client.send_message(
                 BOTLOG_CHATID,
                 "#UNMUTE\n"
-                f"PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
+                f"JAMET: [{user.first_name}](tg://user?id={user.id})\n"
                 f"GRUP: {unmot.chat.title}(`{unmot.chat_id}`)",
             )
 
@@ -454,13 +454,13 @@ async def ungmoot(un_gmute):
         return
 
     # If pass, inform and start ungmuting
-    await un_gmute.edit("```Membuka Global Mute Pengguna...```")
+    await un_gmute.edit("```Membuka Global Mute Si Jamet...```")
 
     if ungmute(user.id) is False:
-        await un_gmute.edit("`Kesalahan! Pengguna Sedang Tidak Di Gmute.`")
+        await un_gmute.edit("`Kesalahan! JAMET Sedang Tidak Di Gmute.`")
     else:
         # Inform about success
-        await un_gmute.edit("```Berhasil! Pengguna Sudah Tidak Lagi Dibisukan```")
+        await un_gmute.edit("```Berhasil! JAMET Sudah tidak lagi di ban ```")
         await sleep(3)
         await un_gmute.delete()
 
@@ -468,7 +468,7 @@ async def ungmoot(un_gmute):
             await un_gmute.client.send_message(
                 BOTLOG_CHATID,
                 "#UNGMUTE\n"
-                f"PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
+                f"JAMET: [{user.first_name}](tg://user?id={user.id})\n"
                 f"GRUP: {un_gmute.chat.title}(`{un_gmute.chat_id}`)",
             )
 
@@ -495,20 +495,20 @@ async def gspider(gspdr):
         return
 
     # If pass, inform and start gmuting
-    await gspdr.edit("`Berhasil Membisukan Pengguna!`")
+    await gspdr.edit("`Berhasil Membisukan Si Jamet!`")
     if gmute(user.id) is False:
-        await gspdr.edit("`Kesalahan! Pengguna Sudah Dibisukan.`")
+        await gspdr.edit("`Kesalahan! Jamet Sudah Dibisukan.`")
     else:
         if reason:
             await gspdr.edit(f"**Dibisukan Secara Global!**\n**Alasan:** `{reason}`")
         else:
-            await gspdr.edit("`Berhasil Membisukan Pengguna Secara Global!`")
+            await gspdr.edit("`Berhasil Mengbanned Jamet Secara Global!`")
 
         if BOTLOG:
             await gspdr.client.send_message(
                 BOTLOG_CHATID,
                 "#GLOBALMUTE\n"
-                f"PENGGUNA: [{user.first_name}](tg://user?id={user.id})\n"
+                f"JAMET: [{user.first_name}](tg://user?id={user.id})\n"
                 f"GRUP: {gspdr.chat.title}(`{gspdr.chat_id}`)",
             )
 
