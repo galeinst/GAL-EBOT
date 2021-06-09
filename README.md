@@ -14,11 +14,11 @@
 # GAL-EBOT
 ![GALE-BOT Logo](https://telegra.ph/file/f356e4b0dde6e3b9ed00c.jpg)
 
-<h3 align="center">Repo Yang Di Buat Karena Gabut Ajg</h3>
+<h3 align="center">Repo Yang Terbentuk Dari Hasil Kegabutan</h3>
 <p align="center">&nbsp;</p>
 
 ### Repo GAL-EBOT
-Repo Yang Dibuat [Gale](https://t.me/gstwne) Dari Berbagai Repo Userbot Github 
+Repo Yang Dibuat [Gale](https://t.me/gstwne) Yang Ter-Inspirasi Dari Repo Userbot Github 
 
 
 ### CARA MENDAPATKAN STRING SESSON
@@ -40,11 +40,11 @@ Repo Yang Dibuat [Gale](https://t.me/gstwne) Dari Berbagai Repo Userbot Github
 
   > Terakhir Hidupkan Dyno Lalu Check Logs (settings -> view logs) Jika Berhasil Enjoy :)
 ```
-Jangan Lupa Mampir ke Grup Ane [TEKAN DISINI](https://t.me/familyeufro)
+Atau Bisa tanyakan Kepada Owner Jika mengalami Kesulitan [TEKAN DISINI](https://t.me/gstwne)
 ## <p align="center">DEPLOY GAL-EBOT</p>
 
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/galeinst/GAL-EBOT/tree/Lord-Userbot"> <img src="https://img.shields.io/badge/Deploy%20Ke%20Heroku-magenta?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/galeinst/GAL-EBOT/tree/GAL-EBOT"> <img src="https://img.shields.io/badge/Deploy%20Ke%20Heroku-magenta?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
 <br>
 </p>
