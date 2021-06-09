@@ -1,4 +1,4 @@
-# Lord-Userbot
+# GAL-EBOT
 from time import sleep
 from userbot import CMD_HELP, bot
 from userbot.events import register
